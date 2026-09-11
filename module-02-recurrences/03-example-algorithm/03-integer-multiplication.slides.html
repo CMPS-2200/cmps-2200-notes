@@ -14748,7 +14748,7 @@ $$C(v) \leq \frac{1}{\alpha} \sum_{u \in D(v)} C(u)$$<p>let $\alpha \leftarrow 2
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><br></p>
-<p>nodes per level: $1, 4, 64, \ldots 4^i \ldots 4^{\lg n} = n^{\lg 4} = n^2$</p>
+<p>nodes per level: $1, 4, 16, \ldots 4^i \ldots 4^{\lg n} = n^{\lg 4} = n^2$</p>
 <blockquote><p>This is a leaf-dominated reucrrence that is $O(n^2)$ -- the same as the elementary school algorithm!</p>
 </blockquote>
 <p>Now, what is the span of this algorithm if implemented in parallel?</p>
@@ -14803,7 +14803,7 @@ $</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Observation:</p>
 <p>$\begin{align} 
-(x_L + x_R)\cdot (y_L + y_R) &amp;=&amp; (x_L\cdot y_L) + \pmb{(x_L\cdot y_R) + (x_R\cdot y_L)} + (x_R\cdot y_R)\\
+(x_L + x_R)\cdot (y_L + y_R) = (x_L\cdot y_L) + \underline{(x_L\cdot y_R) + (x_R\cdot y_L)} + (x_R\cdot y_R)\\
 \end{align}
 $</p>
 
@@ -14812,17 +14812,45 @@ $</p>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>$\begin{align}
-\pmb{(x_L\cdot y_R) + (x_R\cdot y_L)} = (x_L + x_R)\cdot (y_L + y_R) - (x_L\cdot y_L) - (x_R\cdot y_R)\\
+\underline{(x_L\cdot y_R) + (x_R\cdot y_L)} = \pmb{(x_L + x_R)\cdot (y_L + y_R) - (x_L\cdot y_L) - (x_R\cdot y_R)}\\
 \end{align}$</p>
 
 </div>
 </div></div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><br></p>
 <p>How does our observation help us?</p>
+<p><br></p>
 
 </div>
 </div></div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>$\begin{align}
+&amp;=&amp; 2^n (x_L \cdot y_L) + 2^{n/2} (\underline{x_L \cdot y_R + x_R \cdot y_L}) + (x_R \cdot y_R) \\
+&amp;=&amp; 2^n (x_L \cdot y_L) + 2^{n/2} (\pmb{(x_L + x_R)\cdot (y_L + y_R) -  (x_L\cdot y_L) - (x_R\cdot y_R)}) + (x_R \cdot y_R) \\
+\end{align}
+$</p>
+
+</div>
+</div></div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>What does this buy us?</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>$\begin{align}
+x \cdot y &amp;=&amp; 2^n (x_L \cdot y_L) + 2^{n/2} (\underline{x_L \cdot y_R + x_R \cdot y_L}) + (x_R \cdot y_R) \\
+&amp;=&amp; 2^n (\pmb{x_L \cdot y_L}) + 2^{n/2} ((\pmb{x_L + x_R)\cdot (y_L + y_R)} -  (x_L\cdot y_L) - (x_R\cdot y_R)) + (\pmb{x_R \cdot y_R}) \\
+\end{align}
+$</p>
+
+</div>
+</div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><br></p>
