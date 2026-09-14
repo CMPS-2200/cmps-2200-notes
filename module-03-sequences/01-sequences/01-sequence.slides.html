@@ -14991,7 +14991,7 @@ $</p>
 <h2 id="Nondeterministic-Inject">Nondeterministic Inject<a class="anchor-link" href="#Nondeterministic-Inject">&#182;</a></h2><p>Can we just parallelize each update?</p>
 <p><br><br>
 $a = \langle 1,2,3,4,5,6 \rangle$</p>
-<p>$inject \: a \: \langle (2, 99), (2, 100) \rangle \Rightarrow $ ???</p>
+<p>$inject \: a \: \langle (2, 99), (2, 100) \rangle \Rightarrow \langle 1,2,100,4,5,6 \rangle$</p>
 <p><br></p>
 <p>$ninject \: a \: \langle (2, 99), (2, 100) \rangle \Rightarrow$</p>
 <p>$\langle 1,2,\mathbf{99},4,5,6 \rangle$  <strong>OR</strong>
@@ -14999,13 +14999,7 @@ $\langle 1,2,\mathbf{100},4,5,6 \rangle$</p>
 <p><br></p>
 
 </div>
-</div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>essentially ignore race conditions</p>
-
-</div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Iterate">Iterate<a class="anchor-link" href="#Iterate">&#182;</a></h2><p>Iterate over a sequence and accumulate a result that changes at each step (e.g., "running sum")</p>
