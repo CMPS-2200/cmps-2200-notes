@@ -15004,6 +15004,11 @@ $\langle 1,2,\mathbf{100},4,5,6 \rangle$</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Iterate">Iterate<a class="anchor-link" href="#Iterate">&#182;</a></h2><p>Iterate over a sequence and accumulate a result that changes at each step (e.g., "running sum")</p>
 <p>$iterate \ (f : \alpha \times \beta \rightarrow \alpha) (x : \alpha) (a : \mathbb{S}_\beta) : \alpha$</p>
+
+</div>
+</div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>$iterate$ is a function that takes as input:</p>
 <ul>
 <li>another function $f : \alpha \times \beta \rightarrow \alpha$</li>
@@ -15011,6 +15016,11 @@ $\langle 1,2,\mathbf{100},4,5,6 \rangle$</p>
 <li>a sequence $a$ of type $\mathbb{S}_\beta$</li>
 </ul>
 <p>and returns a value of type $\alpha$ that is the result of applying $f(x,a)$ to each element of the sequence.</p>
+
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><br></p>
 <p>$iterate \: f \: x \: a =
 \begin{cases}
@@ -15020,7 +15030,7 @@ iterate \: f \:\: f(x, a[0]) \:\:\: a[1 \ldots |a|-1]&amp; \hbox{otherwise}
 $</p>
 
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>e.g.</p>
