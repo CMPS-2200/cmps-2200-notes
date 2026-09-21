@@ -14399,7 +14399,19 @@ div.jp-OutputPrompt {
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Reductions">Reductions<a class="anchor-link" href="#Reductions">&#182;</a></h2><p>We say that a problem $A$ is reducable to a problem $B$ if an instance of problem $A$ can be turned into some instance of $B$. So, this means we can solve problem $A$ using these three steps:</p>
+<h2 id="Reductions">Reductions<a class="anchor-link" href="#Reductions">&#182;</a></h2><p>We say that a problem $A$ is reducable to a problem $B$ if an instance of problem $A$ can be turned into some instance of $B$.</p>
+
+</div>
+</div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img width=70% src="figures/monsters-inc.png"/></p>
+
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We can solve problem $A$ using these three steps:</p>
 <ul>
 <li><p>The input $\mathcal{I}_A$ to $A$ is transformed into one or more instances of $B$</p>
 </li>
@@ -14410,7 +14422,7 @@ div.jp-OutputPrompt {
 </ul>
 
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>It's convenient to view this schematically as:</p>
@@ -14419,21 +14431,27 @@ div.jp-OutputPrompt {
 <p>What is the running time of our generic algorithm for solving $A$?</p>
 
 </div>
-</div></section><section>
+</div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="figures/reduction.jpg" alt="reduction.jpg">
-<br><p></p>
+<p><br></p>
 <p>The time to solve $A$ on an input $\mathcal{I}_A$:</p>
 <ul>
 <li>the time to construct one or more instances of $B$</li>
 <li>the time to solve one or more instances of $B$</li>
 <li>the time to construct the solution to $\mathcal{I}_A$</li>
 </ul>
-<p>We say that a reduction is <em>efficient</em> if the running time of the input/output transformations do not exceed the running time of the problem being solved.</p>
+<p><br></p>
 
 </div>
-</div></section><section>
+</div></div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<blockquote><p>We say that a reduction is <em>efficient</em> if the running time of the input/output transformations do not exceed the running time of the problem being solved.</p>
+</blockquote>
+
+</div>
+</div></div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Example:-Reduce-min-to-sorting">Example: Reduce min to sorting<a class="anchor-link" href="#Example:-Reduce-min-to-sorting">&#182;</a></h2>
@@ -14571,15 +14589,11 @@ div.jp-OutputPrompt {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Suppose we are speculating about the difficulty of a scary looking problem $A$. Now suppose we manage to find a problem $B$ so that we have an efficient reduction from $A$ to $B$.</p>
+<p>What can we say?</p>
+<p><br></p>
 
 </div>
 </div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img width=70% src="figures/monsters-inc.png"/></p>
-
-</div>
-</div></div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>The runtime (work or span) of $A$ is upper bounded by the runtime of <em>any</em> algorithm for $B$, without having found an algorithm for $A$ or $B$!</p>
