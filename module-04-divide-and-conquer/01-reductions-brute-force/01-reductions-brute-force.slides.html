@@ -14637,6 +14637,11 @@ So, by reducing <code>min</code> to <code>sort</code>, we've just shown that</p>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>Reduction</strong>: No input transformation, just sort $L$ and take the element at position $\lfloor n/2 \rfloor$.</p>
+
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>This shows finding the median of a list is no harder than sorting the list. What can we conclude about finding the median (i.e., <em>selection</em>)?</p>
 <p>Upper bound?</p>
 
@@ -14645,6 +14650,11 @@ So, by reducing <code>min</code> to <code>sort</code>, we've just shown that</p>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>$O(n\log n)$, since this is the best runtime for sorting.</p>
+
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>It turns out that there is an $O(n)$ algorithm for median finding. What does this say about the best possible runtime for sorting?</p>
 
 </div>
@@ -14691,10 +14701,15 @@ So, by reducing <code>min</code> to <code>sort</code>, we've just shown that</p>
 <p><p>
 <br></p>
 <p>The extreme points always create a convex boundary around the point set, hence the name.</p>
-<p>How difficult is convex hull, relative to other computational problems?</p>
 
 </div>
-</div></section><section>
+</div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>How difficult is convex hull, relative to other computational problems?</strong></p>
+
+</div>
+</div></div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>Reduction: Sorting -&gt; Convex Hull</strong>:</p>
@@ -14713,7 +14728,13 @@ So, by reducing <code>min</code> to <code>sort</code>, we've just shown that</p>
 </div></div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Implication:</strong> Convex hull is at least as hard as sorting. Sorting is $\Omega(n \log n)$. So computing the convex hull is $\Omega(n \log n)$.</p>
+<p><strong>Implication:</strong> Convex hull is at least as hard as sorting.</p>
+
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Sorting is $\Omega(n \log n)$. So computing the convex hull is $\Omega(n \log n)$.</p>
 
 </div>
 </div></div></section></section><section><section>
@@ -14758,13 +14779,13 @@ So, by reducing <code>min</code> to <code>sort</code>, we've just shown that</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <blockquote><p>There are only about $10^{80}$ atoms in the known universe...</p>
 </blockquote>
-<p>This is horribly inefficient.</p>
+<p>This is horribly inefficient. 😱</p>
 
 </div>
-</div></div><div class="fragment">
+</div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Is there any upside to brute force?</p>
+<p><br></p>
 
 </div>
 </div></div><div class="fragment">
@@ -14869,7 +14890,7 @@ So, by reducing <code>min</code> to <code>sort</code>, we've just shown that</p>
 </li>
 <li><p>Bruce Force algorithms are simple</p>
 <ul>
-<li>Sometimes, it is convenient to prototype a brute force solution first before implementing a more complex and efficient one.</li>
+<li>Sometimes, it is convenient to think through, or even prototype a brute force solution first before implementing a more complex and efficient one.</li>
 </ul>
 </li>
 </ul>
