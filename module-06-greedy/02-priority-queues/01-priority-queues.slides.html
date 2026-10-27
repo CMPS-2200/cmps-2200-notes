@@ -14626,7 +14626,7 @@ div.jp-OutputPrompt {
 </div></div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>What is the relationship betweent the size of a leftist heap and its rank?</p>
+<p>What is the relationship between the size of a leftist heap and its rank?</p>
 
 </div>
 </div></div></section><section>
@@ -14639,6 +14639,16 @@ div.jp-OutputPrompt {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>Proof</strong>: To prove this lemma, we first want to show that if a heap has rank $r$, then it has at least $2^r - 1$ nodes.</p>
+<p>Why?</p>
+
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<blockquote><p>$r \leq \log_2(n+1)$</p>
+<p>$2^r \leq n+1$</p>
+<p>$2^r - 1 \leq n$</p>
+</blockquote>
 
 </div>
 </div></div><div class="fragment">
@@ -14663,7 +14673,15 @@ div.jp-OutputPrompt {
 <p>$n(r) = 1 + n(rank(L(x))) + n(rank(R(x)))$</p>
 
 </div>
-</div></div><div class="fragment">
+</div></div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><br></p>
+<p>Then for a leftist heap rooted at $x$ of rank $r$ we get the following recurrence:</p>
+<p>$n(r) = 1 + n(rank(L(x))) + n(rank(R(x)))$</p>
+
+</div>
+</div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>$n(r) \geq 1 + n(r-1) + n(r-1)$</p>
@@ -14681,10 +14699,15 @@ div.jp-OutputPrompt {
 <p>This recurrence yields a complete binary tree which has $n(r) \geq 2^{r}-1$.</p>
 
 </div>
-</div></div></section><section>
+</div></div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Now to prove the lemma, suppose we have a leftist heap with $n$ nodes and rank $r$. First, $n \geq n(r)$ by definition. This means that $n \geq 2^r - 1$.</p>
+
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 $$\begin{align}
 n &amp;\geq 2^r - 1 \\
 n + 1 &amp;\geq 2^r \\
@@ -14692,7 +14715,7 @@ r &amp;\leq \log_2 (n+1) ~~ \blacksquare
 \end{align}
 $$
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>Theorem</strong>: If $A$ and $B$ are leftist heaps, then the meld algorithm runs in $O(\log |A| + \log |B|)$ work.</p>
